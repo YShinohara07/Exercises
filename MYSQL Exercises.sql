@@ -8,7 +8,7 @@ SELECT s.Name
         JOIN Packages p ON p.ID=s.ID
         JOIN Packages fp ON fp.ID=f.Friend_ID
     WHERE fp.Salary > p.Salary
-    ORDER BY fp.Salary
+    ORDER BY fp.Salary;
 
  
 --Having a duplicates of the highest only
@@ -34,7 +34,7 @@ SELECT
             SELECT hacker_id, COUNT(challenge_id) as challenge_created
             FROM Challenges
             GROUP BY hacker_id) ) u
-    ORDER BY challenge_created DESC, h.hacker_id
+    ORDER BY challenge_created DESC, h.hacker_id;
  
 --Solution
 /* these are the columns we want to output */
