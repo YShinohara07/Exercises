@@ -1,5 +1,16 @@
 /** MYSQL Exercise Log: From recent to oldest **/
 
+-- Binary Tree Node
+-- https://www.hackerrank.com/challenges/binary-search-tree-1/problem?isFullScreen=true
+SELECT
+    N,
+    CASE WHEN P IS NULL THEN 'Root' ELSE
+        CASE WHEN N IN (SELECT P FROM BST) THEN 'Inner' ELSE
+        'Leaf' END END
+    FROM BST
+    ORDER BY N
+
+
 -- Practicing Joins
 -- https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true
 SELECT s.Name
