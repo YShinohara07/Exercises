@@ -1,5 +1,14 @@
 /** MYSQL Exercise Log: From recent to oldest **/
 
+-- Concating names and locating a word within a column
+-- https://pgexercises.com/questions/joins/threejoin.html
+SELECT DISTINCT CONCAT(m.firstname,' ',m.surname) AS member, f.name
+    FROM cd.bookings b 
+        JOIN cd.members m ON b.memid=m.memid
+        JOIN cd.facilities f ON b.facid=f.facid
+    WHERE f.name LIKE '%Tennis Court%'
+    ORDER BY member
+
 -- Binary Tree Node
 -- https://www.hackerrank.com/challenges/binary-search-tree-1/problem?isFullScreen=true
 SELECT
