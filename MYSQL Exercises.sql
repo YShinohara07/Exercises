@@ -1,5 +1,12 @@
 /** MYSQL Exercise Log: From recent to oldest **/
 
+-- Extracting Information from timestamps
+SELECT facid, SUM(slots) AS "Total Slots"
+    FROM cd.bookings
+    WHERE extract('month' from starttime)=9 AND extract('year' from starttime)=2012
+    GROUP BY facid
+    ORDER BY "Total Slots"
+
 -- Concating names and locating a word within a column
 -- https://pgexercises.com/questions/joins/threejoin.html
 SELECT DISTINCT CONCAT(m.firstname,' ',m.surname) AS member, f.name
